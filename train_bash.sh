@@ -1,0 +1,20 @@
+#! /bin/sh
+export MODEL_NAME="CompVis/stable-diffusion-v1-4"
+export dataset_name="Norod78/cartoon-blip-captions"
+
+accelerate config default
+accelerate launch tti/train_text_to_image.py \
+  --pretrained_model_name_or_path=$MODEL_NAME \
+  --dataset_name=$dataset_name \
+  --use_ema \
+  --resolution=512 --center_crop --random_flip \
+  --train_batch_size=1 \
+  --gradient_accumulation_steps=1 --gradient_checkpointing \
+  --use_8bit_adam \
+  --enable_xformers_memory_efficient_attention \
+  --mixed_precision="fp16" \
+  --max_train_steps=300 \
+  --learning_rate=1e-05 \
+  --max_grad_norm=1 \
+  --lr_scheduler="constant" --lr_warmup_steps=0 \
+  --output_dir="cartoon-blip-captions-model"
