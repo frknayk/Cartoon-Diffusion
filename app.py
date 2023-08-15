@@ -24,7 +24,6 @@ st.subheader("Run Fine-Tuned🔧Model on Cartoons Dataset📒")
 
 
 model_path = st.text_input("Enter the absolute path of cartoon-blip-captions-model")
-# model_path = "C:\\Users\\Furka\\Desktop\\cartoon-blip-captions-model"
 input_prompt = st.text_input("Enter your text prompt(Example: Astronaut child drinking coffee on the mars)")
 
 if input_prompt is not None:
