@@ -1,5 +1,5 @@
-<h1 align="center"> Composer </h1>
-<h3 align="center">  Generate images from text input </h3>
+<h1 align="center"> Cartoon Diffusion V1 </h1>
+<h3 align="center">  Generate cartoon like images from user prompt </h3>
 
 </br>
 
@@ -10,7 +10,7 @@
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 <!-- ABOUT THE PROJECT -->
-<h2 id="about-the-project"> :pencil: About The Project</h2>
+<h2 id="about-the-project">About The Project</h2>
 
 <p align="justify">
     The project aims to generate images from text provided by users as a web-based application
@@ -20,32 +20,13 @@
 <h2 id="liveApp" href=> <a href="https://rlcontrol.streamlit.app"> Try the App Live with Streamlit! </a> </h2>
 
 
-<p align="center">
-  <img src="files/training_page.jpg" alt="Training Page" width="80%" height="80%">
-</p>
-<p align="center">
-  <img src="files/test_page.jpg" alt="Testing Page" width="80%" height="80%">
-</p>
-<p align="center">
-  <img src="files/pid_page.jpg" alt="PID Control Page" width="80%" height="80%">
-</p>
-
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 <!-- INSTALL HOW TO -->
 <h2 id="install"> Installation Steps</h2>
 
 <p align="justify">
-  Follow steps below,
-
-    1. Create Conda environment:
-        - 'conda env create --name rlcontrol --file=environment.yml'
-
-    2. Install OpenAI Gym Environment
-        - Install gym_control environment: `pip install -e .`
-
-    - Export conda env yaml: `conda env export > environment.yml --no-builds`
-    - Export conda env yaml as requirements.txt: `conda list -e > requirements.txt`
+  Please follow the [training guide](#README_TRAIN.md)
 
 <p align="justify">
   
@@ -57,7 +38,7 @@
       `streamlit run app.py` 
   
   Build for docker based deployment
-  - `docker build -t streamlit .`
+  - `docker build -t t2img_docker .`
 
   ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 

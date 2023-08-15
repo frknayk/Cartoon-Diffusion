@@ -16,7 +16,7 @@ Welcome to the Stable Diffusion based text-to-image generative AI repository! Th
 4. [Training Dataset](#training-dataset)
 5. [Model Complexity](#model-complexity)
 6. [Model Evaluation Metric](#model-evaluation-metric)
-
+7. [Web Deployment](#web-deployment)
 ---
 
 ## Installation
@@ -46,13 +46,13 @@ cd path/to/TextToImageApp
 pip install -r requirements.txt
 ```
 
-3. Login to Huggingface
+<!-- 3. Login to Huggingface
   1. Please create an Huggingface account if you do not have already, it is free.
   2. Create the access token and copy then paste after running following command
 
 ```bash
 huggingface-cli login
-```
+``` -->
 
 
 ## Training
@@ -91,16 +91,12 @@ You can also continue your training from a checkpoint by the following argument:
 Run `train_bash.sh` file for starting the training process.
 
 ```bash
-export MODEL_NAME="CompVis/stable-diffusion-v1-4"
-export DATASET_HUGGING_FACE_NAME="Norod78/cartoon-blip-captions"
-export OUTPUT_DIR="cartoon-blip-captions-model"
-
 # Initialize an 🤗 Accelerate environment with:
 accelerate config default
 
 accelerate launch scripts/train_text_to_image.py \
-  --pretrained_model_name_or_path=$MODEL_NAME \
-  --dataset_name=$DATASET_HUGGING_FACE_NAME \
+  --pretrained_model_name_or_path="CompVis/stable-diffusion-v1-4" \
+  --dataset_name="Norod78/cartoon-blip-captions" \
   --use_ema \
   --resolution=512 --center_crop --random_flip \
   --train_batch_size=1 \
@@ -113,7 +109,7 @@ accelerate launch scripts/train_text_to_image.py \
   --learning_rate=1e-05 \
   --max_grad_norm=1 \
   --lr_scheduler="constant" --lr_warmup_steps=0 \
-  --output_dir=$OUTPUT_DIR
+  --output_dir="cartoon-blip-captions-model"
   # --push_to_hub # If want to send trained model to HF hub.
 ```
 
@@ -180,3 +176,31 @@ The Stable Diffusion AI model has approximately X million parameters, which dete
 The primary evaluation metric used for assessing the performance of the Stable Diffusion AI model is **Mean Squared Error (MSE)**, calculated directly in the code using ground truth data and generated outputs during validation.
 
 For any questions or issues, please contact [furkanayik@outlook.com](mailto:furkanayik@outlook.com). Enjoy using Stable Diffusion based text-to-image AI for your image generation tasks!
+
+## Web Deployment by Steramlit
+
+Web deployment part is made with Streamlit library which is a quick way to turn the code base to web-based application.
+An overview to the web application of AI can be seen below:
+
+  <img src="files/web_app_overview.png" alt="Web-App Overview" width="10%" height="10%">
+
+In the web-app, user needs to enter *the absolute path* of the cartoon-blip-captions-model which is created after the training in the project folder: `path/to/TextToImageApp`
+
+
+
+### Installation
+No specific installation is required since all requirements are already installed with initial steps.
+
+### Local Deployment of Web-App
+Running streamlit app script app.py would reveal the app.
+```bash
+streamlit run app.py
+```
+
+### Online Deployment of Web-App
+For the deployment to other platforms, compose the Dockerfile as follows:
+```bash
+docker build -t t2img_docker .
+```
+
+Once the docker is composed, the application can be deployed to cloud based platform to be served people around the world.
