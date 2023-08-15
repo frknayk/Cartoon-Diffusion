@@ -13,6 +13,8 @@
   <img src="files/App_Overview.png" alt="Project Overview" width="40%" height="40%">
 </p>
 
+<h2 id="liveApp" href=> <a href="https://text2imagegen.streamlit.app/"> Try App Live with Streamlit! </a> </h2>
+
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 <!-- ABOUT THE PROJECT -->
