@@ -7,58 +7,80 @@
   <img src="files/project_icon.png" alt="Sample signal" width="10%" height="10%">
 </p>
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png) 
+<h2 id="about-the-project">Project Overview</h2>
+<p align="left">
+  <img src="files/App_Overview.png" alt="Project Overview" width="40%" height="40%">
+</p>
+
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 <!-- ABOUT THE PROJECT -->
 <h2 id="about-the-project">About The Project</h2>
 
 <p align="justify">
-    The project aims to generate images from text provided by users as a web-based application
+Welcome to the Stable Diffusion based text-to-image generative AI repository!
+</p>
+This readme file provides you with all the necessary information to install, run, and understand the Stable Diffusion AI model.
 </p>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-<h2 id="liveApp" href=> <a href="https://rlcontrol.streamlit.app"> Try the App Live with Streamlit! </a> </h2>
+<!-- ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<h2 id="liveApp" href=> <a href="https://rlcontrol.streamlit.app"> Try the App Live with Streamlit! </a> </h2> -->
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 <!-- INSTALL HOW TO -->
-<h2 id="install"> Installation Steps</h2>
+<h2 id="install"> Installation and Training Steps</h2>
 
 <p align="justify">
-  Please follow the [training guide](#README_TRAIN.md)
+  <a href="README_TRAIN.md" target="_blank">Please follow the training guide</a>
 
 <p align="justify">
+
+
+  ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<h2 id="install">Running App Locally </h2>
   
-<h2 id="install">Run the App Locally </h2>
-  
-    1. Activate rlcontrol environment
-      `conda activate rlcontrol`
-    2. Run streamlit app and watch app at `http://localhost:8502`
+    0. Install the requirements
+      Follow 'Installation' section in README_TRAIN.md file
+    1. Create and activate tti_env environment
+      `conda activate tti_env`
+    2. Train the algorithm
+      Follow 'Running Training' section in README_TRAIN.md file
+    3. Run the app for test trained AI and watch app at `http://localhost:8502`
       `streamlit run app.py` 
-  
-  Build for docker based deployment
+
+<h2 id="install">Deployment</h2>
+
+  Build docker image for web/cloud deployment. 
   - `docker build -t t2img_docker .`
+
+  Streamlit/Gradio will automatically build docker image from this dockerfile.
 
   ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 <!-- PREREQUISITES -->
 <h2 id="prerequisites"> :fork_and_knife: Prerequisites</h2>
 
-<!--This project is written in Python programming language. <br>-->
 The following open source packages are used in this project:
-* torch
-* tensorboardx
-* tqdm
-* numpy
-* matplotlib
-* plotly
-* pandas
+* torchvision
+* accelerate>=0.16.0
+* transformers>=4.25.1
+* datasets
+* ftfy
+* tensorboard
+* Jinja2
+* xformers
+* bitsandbytes
+* scipy
 * streamlit
 
-* 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 <h2 id="future"> Future Work </h2>
-  - Track experiments from db (postgresql)
-  - Fix seeds
+
+* Add different models
+* Search datasets online
+* Add training page(requires hardware)
