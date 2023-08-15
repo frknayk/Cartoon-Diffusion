@@ -4,7 +4,7 @@ Welcome to the Stable Diffusion based text-to-image generative AI repository! Th
 
 ## Table of Contents
 
-1. [Installation](#installation)# Stable Diffusion AI Readme
+1. [Installation](#installation)
 
 Welcome to the Stable Diffusion based text-to-image generative AI repository! This readme file provides you with all the necessary information to install, run, and understand the Stable Diffusion AI model.
 
